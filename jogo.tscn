@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bqp0hrxloie2a"]
+
+[node name="Jogo" type="Node2D" unique_id=874049177]
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=1212751358]
+
+[node name="Fundo 2" type="Sprite2D" parent="." unique_id=1141360831]
+
+[node name="Chão" type="Sprite2D" parent="." unique_id=214280926]
+
+[node name="Chão2" type="Sprite2D" parent="." unique_id=1407105504]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Chão2" unique_id=292370229]
