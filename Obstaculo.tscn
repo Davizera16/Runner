@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://brrm64y17i5nc"]
+
+[ext_resource type="Script" uid="uid://xoaqk6rvgt0f" path="res://obstáculo.gd" id="1_25lpp"]
+[ext_resource type="Texture2D" uid="uid://baro3r6cd60gi" path="res://Recursos/thorn.png" id="2_qbpn8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25lpp"]
+size = Vector2(205.5, 47)
+
+[node name="Obstaculo" type="Area2D" unique_id=625188240]
+script = ExtResource("1_25lpp")
+
+[node name="ImagemObstaculo" type="Sprite2D" parent="." unique_id=534274756]
+texture_filter = 1
+position = Vector2(-0.9999924, -1)
+scale = Vector2(13.4375, 11.124999)
+texture = ExtResource("2_qbpn8")
+
+[node name="CorpoObstaculo" type="CollisionShape2D" parent="." unique_id=251447068]
+position = Vector2(-6.75, 65.5)
+shape = SubResource("RectangleShape2D_25lpp")

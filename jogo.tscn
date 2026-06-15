@@ -7,13 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://do80e0wlcc08g" path="res://Recursos/middleground1.png" id="5_8c340"]
 [ext_resource type="Texture2D" uid="uid://cn8jio477e3xl" path="res://Recursos/player.png" id="6_8c340"]
 [ext_resource type="Script" uid="uid://brbi1ca14qb5e" path="res://jogador.gd" id="6_45nkh"]
+[ext_resource type="Script" uid="uid://nyb1xncbm62a" path="res://gerador_obstaculos.gd" id="8_ysdx3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45nkh"]
-size = Vector2(2315, 135)
+size = Vector2(2313, 135)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8c340"]
-radius = 40.0
-height = 108.0
+radius = 41.0
+height = 118.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_45nkh"]
 atlas = ExtResource("6_8c340")
@@ -39,6 +40,10 @@ region = Rect2(192, 0, 48, 48)
 atlas = ExtResource("6_8c340")
 region = Rect2(240, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ka1p"]
+atlas = ExtResource("6_8c340")
+region = Rect2(0, 48, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_2ka1p"]
 animations = [{
 "frames": [{
@@ -63,6 +68,14 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ka1p")
+}],
+"loop": true,
+"name": &"pular",
+"speed": 5.0
 }]
 
 [node name="Jogo" type="Node2D" unique_id=874049177]
@@ -80,8 +93,8 @@ scale = Vector2(3.5859375, 3.5666664)
 texture = ExtResource("2_1ap6j")
 
 [node name="Chao" type="Sprite2D" parent="." unique_id=214280926]
-position = Vector2(0, 446)
-scale = Vector2(3.790625, 4.2343745)
+position = Vector2(-2, 446)
+scale = Vector2(3.796875, 4.2343745)
 texture = ExtResource("3_qn35j")
 centered = false
 
@@ -94,7 +107,7 @@ centered = false
 [node name="ChãoFísico" type="StaticBody2D" parent="." unique_id=737227476]
 
 [node name="CorpoChão" type="CollisionShape2D" parent="ChãoFísico" unique_id=112357733]
-position = Vector2(1156.5, 581.5)
+position = Vector2(1157.5, 581.5)
 shape = SubResource("RectangleShape2D_45nkh")
 
 [node name="MeioAzul" type="Sprite2D" parent="." unique_id=866796439]
@@ -133,5 +146,8 @@ texture_filter = 1
 position = Vector2(113.00001, 500.87497)
 scale = Vector2(4.5208335, 5.3385406)
 sprite_frames = SubResource("SpriteFrames_2ka1p")
+animation = &"pular"
 autoplay = "default"
-frame_progress = 0.18481842
+
+[node name="GeradorObstaculos" type="Node2D" parent="." unique_id=852472533]
+script = ExtResource("8_ysdx3")
